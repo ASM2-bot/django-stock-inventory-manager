@@ -1,0 +1,54 @@
+
+
+
+
+
+/*Align the title to the center of the page*/
+.table{
+	font-size: 13px;
+	text-align: center;
+	width: 95%;
+	margin: auto;
+	
+}
+
+/*Make alternating colors for the table rows*/
+.table tr:nth-child(odd){
+	background: #8fa2be
+}
+
+.table tr:nth-child(even){
+	background: #6e8db6
+}
+
+th {
+  background-color: #2b4a83;
+  color: rgb(78, 108, 150);
+}
+
+.header {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #384d6a; /* gris foncé bleuâtre */
+    font-size: 48px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 40px 0 20px;
+    line-height: 1.2;
+    text-shadow: none;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+.success{
+     list-style: none;
+     background-color: #2e6da4;
+     color: white;
+     box-shadow: 12px 12px 12px #d8b3c1;
+     text-align: center;
+ }
+ .messages {
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+

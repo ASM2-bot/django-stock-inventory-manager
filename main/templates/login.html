@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags i18n %}  <!-- Assure-toi de charger i18n -->
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background-image: url("{% static 'images/prefecture.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .login-form-container {
+    background-color: rgba(255, 255, 255, 0.478);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+</style>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="login-form-container">
+    <h2 class="text-center mb-4">🔐 Login</h2>
+
+    {% if form.errors %}
+      <div class="alert alert-danger text-center">
+        Nom d’utilisateur ou mot de passe invalide. Réessayez.
+      </div>
+    {% endif %}
+
+    <form method="post" class="mx-auto" style="max-width: 400px;">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-primary w-100">Se connecter</button>
+    </form>
+
+    <p class="text-center mt-3">
+      {% trans "Forgot your password?" %} <a href="{% url 'password_reset' %}">{% trans "Reset it" %}</a>.
+    </p>
+  </div>
+</div>
+{% endblock %}
